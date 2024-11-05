@@ -17,7 +17,7 @@ neighbors_settings = range(1, 15)
 
 for n_neighbors in neighbors_settings:
     # build the model
-    clf = KNeighborsClassifier(n_neighbors=n_neighbors)
+    clf = KNeighborsClassifier(n_neighbors=n_neighbors, metric='manhattan')
     clf.fit(X_train, y_train)
     # record training set accuracy
     training_accuracy.append(clf.score(X_train, y_train))
